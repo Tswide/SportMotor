@@ -1,0 +1,15 @@
+:root {
+    --color-primary: rgb(153, 59, 0);
+    --color-accompagnement: rgb(65, 65, 65);
+}
+
+body {
+    font-family: 'Bebas Neue', cursive;
+    width: 1366px;
+    margin: 0px auto;
+    padding: 0;
+}
+
+p {
+    font-size: 20px;
+}
