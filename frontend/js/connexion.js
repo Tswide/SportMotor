@@ -35,19 +35,25 @@ $(document).ready(function() {
     });
     
     //Verification des identifiant + saveCookie
-    $("#loginform").on("submit", function(event) {
-
+    $(".buttonConnexion").on("click", function() {
         $.post('../../backend/json/user.json', function(data) {
-            let email = $(".email").val();
-            let password = $(".password").val();
+            let emailVal = $(".email").val();
+            let passwordVal = $(".password").val();
+
             $.each(data, function(k,user) {
-                if(email === user.email && password === user.password){
-                    console.log('passe')
-                    $(".popup").show();
-                    $(".popup").html(`<p>Votre email ou mot de passe est incorrecte</p>`);
+                console.log(user.email);
+                console.log(emailVal);
+                if(emailVal == user.email){
+                    if(passwordVal == user.password){
+                        // $("#loginform").submit();
+                        // //saveCookie
+                    }else {
+                        $(".popup").show();
+                        $(".popup").html(`<p>Votre mot de passe est incorrecte</p>`);
+                    }
                 } else {
-                    $("#loginform").submit();
-                    //saveCookie
+                    $(".popup").show();
+                    $(".popup").html(`<p>Votre email est incorrecte</p>`);
                 }
             });
         });
