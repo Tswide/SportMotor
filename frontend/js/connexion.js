@@ -41,7 +41,7 @@ $(document).ready(function() {
             let email = $(".email").val();
             let password = $(".password").val();
             $.each(data, function(k,user) {
-                if(user.email === user.email && password === user.password){
+                if(email === user.email && password === user.password){
                     console.log('passe')
                     $(".popup").show();
                     $(".popup").html(`<p>Votre email ou mot de passe est incorrecte</p>`);
