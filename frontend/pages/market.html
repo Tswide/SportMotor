@@ -6,28 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SportMotor</title>
 
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/all.css">
+    <link rel="stylesheet" href="../css/market.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
     <header>
         <nav>
             <h1>SportMotor</h1>
-            <ul>
-                <a href="#"><li>Accueil</li></a>
-                <a href="#"><li>Produit</li></a>
-                <a href="#"><li>Contact</li></a>
-            </ul>
-            <div>
+            <div class="grp1">
+                <ul class="navigation">
+                    <a href="../../index.html"><li>Accueil</li></a>
+                    <a href="./market.html"><li>Produit</li></a>
+                    <a href="#"><li>Contact</li></a>
+                </ul>
                 <div>
-                    <a href="#"><button>Inscription</button></a>
-                    <a href="#"><button>Connexion</button></a>
+                    <i class="uil uil-user"></i>
                 </div>
             </div>
         </nav>
     </header>
+    <section>
+        <div id="filtre">
+            <h2>Filtre</h2>
+            <div class="filtre prix">
+                <h3 class="titreFiltre">Le prix</h3>
+                <div class="entrePrix">
+                    <div class="champsPrix">
+                        <span>Min</span>
+                        <input type="number" value="0" name="prixmin" class="inputNum prixMin">
+                    </div>
+                    <div id="separator">-</div>
+                    <div class="champsPrix">
+                        <span>Max</span>
+                        <input type="number" value="20000" name="prixmax" class="inputNum prixMax">
+                    </div>
+                </div>
+            </div>
+            <div class="filtre categories">
+                <h3>type de consommation</h3>
+                <div>
+                    <label>Essence</label>
+                    <input type="checkbox" name="essence" id="essence"> <br>
+                    <label>Diesel</label>
+                    <input type="checkbox" name="diesel" id="diesel"> <br>
+                    <label>Electrique</label>
+                    <input type="checkbox" name="electrique" id="electrique">
+                </div>
+            </div>
+        </div>
+        <div id="product">
+            <div class="filtre recherche">
+                <div><input type="text" placeholder="Recherche"><i class="uil uil-search"></i></div>
+            </div>
+            <div class="affiche product">
+                <!-- affiche les produits -->
+            </div>
+        </div>
+    </section>
 </body>
 </html>

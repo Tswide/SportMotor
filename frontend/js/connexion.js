@@ -1,14 +1,14 @@
 $(document).ready(function() {
-    $(".button").hide();
+    $(".buttonConnexion").hide();
     $(".popup").hide();
 
     //Verirification des champs si ils sont bien remplie
     $('.email, .password').on('keyup', function() {
         if($('.email').val().length > 0 && $('.password').val().length > 0) {
-            $(".button").show();
+            $(".buttonConnexion").show();
             $(".popup").hide();
         } else {
-            $(".button").hide();
+            $(".buttonConnexion").hide();
             $(".popup").show();
             $(".popup").html(`<p>Veuillez remplire les champs</p>`);
         }
@@ -35,18 +35,15 @@ $(document).ready(function() {
     });
     
     //Verification des identifiant + saveCookie
-    $(".buttonConnexion").on("click", function() {
-        $.post('../../backend/json/user.json', function(data) {
-            let emailVal = $(".email").val();
-            let passwordVal = $(".password").val();
-
+    $(".buttonConnexion").on("click", function(e) {
+        e.preventDefault();
+        $.post('../json/user.json', function(data) {
             $.each(data, function(k,user) {
-                console.log(user.email);
-                console.log(emailVal);
-                if(emailVal == user.email){
-                    if(passwordVal == user.password){
-                        // $("#loginform").submit();
-                        // //saveCookie
+                console.log(user.email)
+                if($(".email").val() == user.email){
+                    if($(".password").val() == user.password){
+                        window.location.assign("../pages/market.html")
+                        return false;
                     }else {
                         $(".popup").show();
                         $(".popup").html(`<p>Votre mot de passe est incorrecte</p>`);
@@ -57,6 +54,22 @@ $(document).ready(function() {
                 }
             });
         });
+    });
+
+    $(".buttonInscription").on("click", function(e) {
+        let jsondata = {
+            "action" : "ajouter",
+            "name" : $(".nameI").val(),
+            "email" : $(".emailI").val(),
+            "password" : $(".passwordI").val()
+        }
+        if($('.nameI').val().length > 0 && $('.emailI').val().length > 0 && $('.passwordI').val().length > 0){
+            $('popup').show();
+            $('popup').html("Veuillez remplire toutes les champs");
+        } else {
+            $.post("../api/api.php", jsondata, function(){
+            });
+        }
     });
 });
 

@@ -1,0 +1,48 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.grp1 {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 100px);
+}
+
+#filtre {
+    width: 30%;
+    height: 100%;
+}
+
+.entrePrix {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#product{
+    width: 70%;
+    background-color: green;
+    height: 100%;
+}
+
+.recherche {
+    background-color: rgb(93, 93, 148);
+    height: 100px;
+    width: 100%;
+}

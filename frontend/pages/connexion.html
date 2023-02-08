@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/connexion.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="../js/connexion.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,32 +34,28 @@
                 </div>
             </div>
             <div class="filter connexion">
-                <form id="loginform" method="post" >
+                <form id="loginform" method="post">
                     <div>
                         <label for="email">E-mail</label> <br>
                         <input type="email" class="email" required><br><br>
                         <label for="password">password</label> <br>
                         <input type="password" class="password" required> <br>
+                        <button class="button buttonConnexion">Connexion</button>
                     </div>
-                    <div class="button"><button class="buttonConnexion">Connexion</button></div>
                 </form>
                 <div class="popup"></div>
             </div>
             <div class="filter inscription hide">
-                <form action="#" method="post">
+                <form method="post">
                     <div>
                         <label for="name">Prenom</label> <br>
-                        <input type="text" class="name" required> <br> <br>
-                    </div>
-                    <div>
-                        <label for="email">E-mail</label> <br>
-                        <input type="email" class="email" required> <br> <br>
-                    </div>
-                    <div>
+                        <input type="text" class="nameI" required> <br> <br>
+                        <label for="email" pattern=".+@globex\.com">E-mail</label> <br>
+                        <input type="email" class="emailI" required> <br> <br>
                         <label for="password">password</label> <br>
-                        <input type="password" class="password" required> <br>
+                        <input type="password" class="passwordI" required> <br>
+                        <button type="submit" class="button buttonInscription">Inscription</button>
                     </div>
-                    <div class="button"><button>Inscription</button></div>
                 </form>
             </div>
         </section>

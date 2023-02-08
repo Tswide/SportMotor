@@ -1,6 +1,6 @@
 <?php
     session_start();
-    $filename = "..".DIRECTORY_SEPARATOR."json".DIRECTORY_SEPARATOR."utilisateurs.json";
+    $filename = "..".DIRECTORY_SEPARATOR."json".DIRECTORY_SEPARATOR."user.json";
     
     $contents = file_get_contents($filename);
     
@@ -23,7 +23,7 @@
         case "modifier":
             foreach($liste as $k => $u) {
                 if($u["id"] == $_POST["id"]) {
-                    $liste[$k]["description"] = $_POST["description"];
+                    $liste[$k]["password"] = $_POST["password"];
                     file_put_contents($filename,json_encode($liste));
                     echo json_encode(array("success" => "L'utilisateur ".$u["id"]." a été modifié"),true);
                     exit;
@@ -39,9 +39,9 @@
             
             $nouveau = array(
                 "id" => $last_id,
-                "nom" => $_POST["nom"],
-                "prenom" => $_POST["prenom"],
-                "description" => $_POST["description"]
+                "name" => $_POST["name"],
+                "email" => $_POST["email"],
+                "password" => $_POST["password"]
             );
 
             $liste[] = $nouveau;
