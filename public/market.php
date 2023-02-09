@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SportMotor</title>
+<?php
+    session_start();
+    require '../functions/auth.php';
 
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/market.css">
+    if(!est_connecte()){
+        header('Location: ./connexion.php');
+        exit();
+    }
+?>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-</head>
-<body>
+<!--===================================  HTML ===================================-->
+<?php require '../html_partials/header.php' ?>
+
+<style>
+    <?php include './css/market.css' ?>
+</style>
     <header>
         <nav>
             <h1>SportMotor</h1>
@@ -50,23 +49,23 @@
             <div class="filtre categories">
                 <h3>type de consommation</h3>
                 <div>
-                    <label>Essence</label>
-                    <input type="checkbox" name="essence" id="essence"> <br>
-                    <label>Diesel</label>
-                    <input type="checkbox" name="diesel" id="diesel"> <br>
-                    <label>Electrique</label>
-                    <input type="checkbox" name="electrique" id="electrique">
+                    <form>
+                        <input type="checkbox" name="carburant" value="essence">essence <br>
+                        <input type="checkbox" name="carburant" value="diesel">diesel <br>
+                        <input type="checkbox" name="carburant" value="electrique">Electrique
+                    </form>
                 </div>
             </div>
         </div>
         <div id="product">
             <div class="filtre recherche">
-                <div><input type="text" placeholder="Recherche"><i class="uil uil-search"></i></div>
+                <input type="text" placeholder="Recherche">
             </div>
             <div class="affiche product">
-                <!-- affiche les produits -->
+                
             </div>
         </div>
     </section>
-</body>
-</html>
+    <script src="js/market.js"></script>
+
+<?php require '../html_partials/footer.php'; ?>
