@@ -42,7 +42,7 @@
                     <div id="separator">-</div>
                     <div class="champsPrix">
                         <span>Max</span>
-                        <input type="number" value="20000" name="prixmax" class="inputNum prixMax">
+                        <input type="number" value="100000" name="prixmax" class="inputNum prixMax">
                     </div>
                 </div>
             </div>
@@ -50,12 +50,13 @@
                 <h3>type de consommation</h3>
                 <div>
                     <form>
-                        <input type="checkbox" name="carburant" value="essence">essence <br>
-                        <input type="checkbox" name="carburant" value="diesel">diesel <br>
-                        <input type="checkbox" name="carburant" value="electrique">Electrique
+                        <input type="checkbox" name="carburant" value="essence" checked>essence <br>
+                        <input type="checkbox" name="carburant" value="diesel" checked>diesel <br>
+                        <input type="checkbox" name="carburant" value="electrique" checked>Electrique
                     </form>
                 </div>
             </div>
+            <button id="filtrage">Filtrage</button>
         </div>
         <div id="product">
             <div class="filtre recherche">

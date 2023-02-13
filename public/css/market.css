@@ -26,8 +26,7 @@ section{
 
 #filtre {
     width: 27%;
-    height: 100%;
-    margin-top: 10%;
+    height: 90%;
 }
 
 .entrePrix {
@@ -106,4 +105,13 @@ img {
 button {
     width: 95%;
     height: 90%;
+}
+
+#filtrage {
+    height: 30px;
+    width: 80%;
+}
+
+form {
+    display: flex;
 }
