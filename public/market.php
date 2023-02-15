@@ -50,17 +50,16 @@
                 <h3>type de consommation</h3>
                 <div>
                     <form>
-                        <input type="checkbox" name="carburant" value="essence" checked>essence <br>
                         <input type="checkbox" name="carburant" value="diesel" checked>diesel <br>
+                        <input type="checkbox" name="carburant" value="essence" checked>essence <br>
                         <input type="checkbox" name="carburant" value="electrique" checked>Electrique
                     </form>
                 </div>
             </div>
-            <button id="filtrage">Filtrage</button>
         </div>
         <div id="product">
             <div class="filtre recherche">
-                <input type="text" placeholder="Recherche">
+                <input type="text" placeholder="Recherche" class="rechercheFilter">
             </div>
             <div class="affiche product">
                 

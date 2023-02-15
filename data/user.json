@@ -1,1 +1,7 @@
-[{"id":1,"name":"julien","email":"julien@gmail.com","password":"root"},{"id":2,"name":"emilie","email":"emilie@gmail.com","password":"admin"},{"id":3,"name":"thierry","email":"thierry@yahoo.fr","password":"azerty"},{"id":4,"name":"rosalie","email":"r@gmailcom","password":"asdf"},{"id":5,"name":"juju","email":"asdf@asdf.f","password":"asdf"}]
+[
+    {"id":1,"name":"julien","email":"julien@gmail.com","password":"root"},
+    {"id":2,"name":"emilie","email":"emilie@gmail.com","password":"admin"},
+    {"id":3,"name":"thierry","email":"thierry@yahoo.fr","password":"azerty"},
+    {"id":4,"name":"rosalie","email":"r@gmailcom","password":"asdf"},
+    {"id":5,"name":"juju","email":"root@root.com","password":"root"}
+]
