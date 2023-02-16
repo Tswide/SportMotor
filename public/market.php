@@ -6,6 +6,11 @@
         header('Location: ./connexion.php');
         exit();
     }
+
+    $host  = $_SERVER['HTTP_HOST'];
+    $filename = '..' . DIRECTORY_SEPARATOR . 'data' . DIRECTORY_SEPARATOR . 'product.json';  
+    $contents = file_get_contents($filename);
+    $liste = json_decode($contents,true);
 ?>
 
 <!--===================================  HTML ===================================-->
@@ -19,9 +24,9 @@
             <h1>SportMotor</h1>
             <div class="grp1">
                 <ul class="navigation">
-                    <a href="../../index.html"><li>Accueil</li></a>
-                    <a href="./market.html"><li>Produit</li></a>
-                    <a href="#"><li>Contact</li></a>
+                    <a href="index.php"><li>Accueil</li></a>
+                    <a href="market.php"><li>Produit</li></a>
+                    <a href="panier.php"><i class="uil uil-shopping-cart-alt"></i></a>
                 </ul>
                 <div>
                     <i class="uil uil-user"></i>
@@ -62,10 +67,27 @@
                 <input type="text" placeholder="Recherche" class="rechercheFilter">
             </div>
             <div class="affiche product">
-                
+                <?php foreach($liste as $product): ?>
+                    <div class="card" data-categorie='<?= $product['categorie']; ?>' data-titre='<?= $product['titre']; ?>'>
+                        <div class="image">
+                            <img src="<?= $product['photo']; ?>" alt="tesla">
+                        </div>
+                        <div class="information">
+                            <div>
+                                <h4><?= $product['titre']; ?></h4>
+                                <p class="prixProduit"><?= number_format($product['prix'],2,',', ' '); ?> €</p>
+                            </div>
+                            <p>C'est une voiture electrique qui a ete cree en 2021</p>
+                        </div>
+                        <div class="buttons">
+                            <a href="addpanier.php?id=<?= $product['id']; ?>"><button class="ajouter">Ajouter au panier</button></a>
+                        </div>
+                    </div>
+                <?php endforeach ?>
             </div>
         </div>
     </section>
-    <script src="js/market.js"></script>
+    <aside></aside>
 
+    <script src="js/market.js"></script>
 <?php require '../html_partials/footer.php'; ?>

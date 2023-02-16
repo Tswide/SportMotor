@@ -28,7 +28,7 @@ $(document).ready(function(){
     }
 
     function PrixFilter() {
-
+        
     }
 
     function RechercheFilter() {
@@ -53,28 +53,24 @@ $(document).ready(function(){
         });
     }
 
-    $.post("../api/api.php", {"action": "liste"}, function(data) {
-        $(".product").html("");
-        r = JSON.parse(data)
-        $.each(r, function(k,product) {
-            $(".product").append(`
-                <div class="card" data-categorie='${product.categorie}' data-titre='${product.titre}'>
-                    <div class="image">
-                        <img src="${product.photo}" alt="tesla">
-                    </div>
-                    <div class="information">
-                        <div>
-                            <h4>${product.titre}</h4>
-                            <p class="prixProduit">${product.prix} €</p>
-                        </div>
-                        <p>C'est une voiture electrique qui a ete cree en 2021</p>
-                    </div>
-                    <div class="buttons">
-                        <button class="ajouter">Ajouter au panier</button>
-                    </div>
-                </div>
-            `);
-        });
+
+    $(".ajouter").on("click", () => {
+        $(this).preventDefault();
+        $.get($(this).attr('href'),{}, function(data){
+            // ça bloque à partir de là
+            if(data.error){
+                alert(data.message);
+            }else{
+                //Si on clique sur le confirm
+                if(confirm(data.message + '. Voulez-vous consulter votre panier ?')) {
+                    location.href = 'panier.php';
+                }else{
+                    //$('#total').empty().append(data.total);
+                    //$('#count').empty().append(data.count);
+                }
+            }
+        },'json');
+        return false;
     });
 
     $("input:checkbox").on("click", () => {

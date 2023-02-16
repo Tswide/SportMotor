@@ -1,22 +1,3 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.grp1 {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navigation {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-}
-
 section{
     display: flex;
     justify-content: space-between;
