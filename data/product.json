@@ -9,14 +9,14 @@
     {
         "id": 2,
         "photo": "https://www.pngfind.com/pngs/m/24-245127_tesla-car-model-x-png-transparent-png.png",
-        "titre": "Mazda mx5",
+        "titre": "Mazda mx5 na",
         "categorie": "diesel",
         "prix": "2000"
     },
     {
         "id": 3,
         "photo": "https://www.pngfind.com/pngs/m/24-245127_tesla-car-model-x-png-transparent-png.png",
-        "titre": "Supra",
+        "titre": "Supra Mk1",
         "categorie": "essence",
         "prix": "8000"
     }

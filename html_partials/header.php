@@ -1,10 +1,11 @@
 <?php
-error_reporting(E_ERROR | E_WARNING | E_PARSE);
-session_start();
-if(isset($_GET['deco'])) {
-    session_destroy();
-}
+    require '../html_partials/_header.php';
 
+    error_reporting(E_ERROR | E_WARNING | E_PARSE);
+    session_start();
+    if(isset($_GET['deco'])) {
+        session_destroy();
+    }
 ?>
 
 <!DOCTYPE html>
