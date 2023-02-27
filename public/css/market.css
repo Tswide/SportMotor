@@ -1,19 +1,17 @@
 section{
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    height: calc(100vh - 100px);
 }
 
 #filtre {
-    width: 27%;
-    height: 90%;
+    width: 30%;
+    height: 100%;
 }
 
 .entrePrix {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 #product{
@@ -22,10 +20,9 @@ section{
 }
 
 .product {
-    margin-top: 40px;
+    margin-top: 25px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .recherche {
@@ -46,6 +43,7 @@ section{
     width: 31%;
     height: 430px;
     margin-bottom: 2%;
+    margin-right: 1.7%;
 }
 
 .image {
@@ -95,4 +93,48 @@ button {
 
 form {
     display: flex;
+}
+
+#liste-panier {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 300px;
+}
+
+.produit-panier {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+
+.incrementation-qt {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-qt {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.footer-cart {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#button-footer-info {
+    width: 10rem;
+    height: 2rem;
+}
+
+#cart {
+    border: 3px solid black;
+    padding: 0 20px;
 }

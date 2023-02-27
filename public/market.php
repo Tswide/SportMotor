@@ -26,7 +26,7 @@
                 <ul class="navigation">
                     <a href="index.php"><li>Accueil</li></a>
                     <a href="market.php"><li>Produit</li></a>
-                    <a href="panier.php"><i class="uil uil-shopping-cart-alt"></i></a>
+                    <i class="uil uil-shopping-cart-alt cart"></i>
                 </ul>
                 <div>
                     <i class="uil uil-user"></i>
@@ -42,12 +42,12 @@
                 <div class="entrePrix">
                     <div class="champsPrix">
                         <span>Min</span>
-                        <input type="number" value="0" name="prixmin" class="inputNum prixMin">
+                        <input type="number" value="0" name="prixmin" class="inputNum prixMin filter">
                     </div>
                     <div id="separator">-</div>
                     <div class="champsPrix">
                         <span>Max</span>
-                        <input type="number" value="100000" name="prixmax" class="inputNum prixMax">
+                        <input type="number" value="100000" name="prixmax" class="inputNum prixMax filter">
                     </div>
                 </div>
             </div>
@@ -55,39 +55,32 @@
                 <h3>type de consommation</h3>
                 <div>
                     <form>
-                        <input type="checkbox" name="carburant" value="diesel" checked>diesel <br>
-                        <input type="checkbox" name="carburant" value="essence" checked>essence <br>
-                        <input type="checkbox" name="carburant" value="electrique" checked>Electrique
+                        <input class="filter" type="checkbox" name="carburant" value="diesel" checked>diesel <br>
+                        <input class="filter" type="checkbox" name="carburant" value="essence" checked>essence <br>
+                        <input class="filter" type="checkbox" name="carburant" value="electrique" checked>Electrique
                     </form>
                 </div>
             </div>
         </div>
         <div id="product">
             <div class="filtre recherche">
-                <input type="text" placeholder="Recherche" class="rechercheFilter">
+                <input type="text" placeholder="Recherche" class="rechercheFilter filter">
             </div>
             <div class="affiche product">
-                <?php foreach($liste as $product): ?>
-                    <div class="card" data-categorie='<?= $product['categorie']; ?>' data-titre='<?= $product['titre']; ?>'>
-                        <div class="image">
-                            <img src="<?= $product['photo']; ?>" alt="tesla">
-                        </div>
-                        <div class="information">
-                            <div>
-                                <h4><?= $product['titre']; ?></h4>
-                                <p class="prixProduit"><?= number_format($product['prix'],2,',', ' '); ?> €</p>
-                            </div>
-                            <p>C'est une voiture electrique qui a ete cree en 2021</p>
-                        </div>
-                        <div class="buttons">
-                            <a href="addpanier.php?id=<?= $product['id']; ?>"><button class="ajouter">Ajouter au panier</button></a>
-                        </div>
-                    </div>
-                <?php endforeach ?>
             </div>
         </div>
     </section>
-    <aside></aside>
+    <div id="cart">
+        <h2>Cart</h2>
+        <div id="liste-panier">
+           
+        </div>
+        <div class="footer-cart">
+            <p id="total">Total: 0.00€</p>
+            <button id='button-footer-info'>Commander</button>
+        </div>
+        <div id="error-message"></div>
+    </div>
 
     <script src="js/market.js"></script>
 <?php require '../html_partials/footer.php'; ?>
