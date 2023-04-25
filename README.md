@@ -1,5 +1,8 @@
 # SportMotor
 
+Projet utilisant Jquery allant avec Php 8.1 en Back-End dans le cadre d'un teste scolaire.
+Fonctionnalités réalisées en Front
+
 ## Connexion
 Pour le formulaire de connexion, suivez les étapes suivantes :
 
